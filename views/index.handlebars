@@ -1,13 +1,35 @@
 <div class="container">
-    <img class="icon" src="/public/assets/image/Burger_PNG_Clip_Art_Image (1).png" style="width: 20vw;">
+    <img class="icon" src="/assets/image/Burger_PNG_Clip_Art_Image (1).png" style="width: 20vw;">
     <h1>Eat-Da-Burger!</h1>
+</div>
+
+<div class="consumed">
+    <ul>
+        <h2>Burgers that are not devoured!</h2>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burgers/burgers-block devoured=true}}
+                {{/unless}}
+            {{/each}}    
+    </ul>
+</div>
+
+<div class="devoured">
+    <ol>
+        <h2>Burgers that are devoured!</h2>
+            {{#each burgers}}
+                {{#if devoured}}
+                    {{> burgers/burgers-block devoured=false}}
+                {{/if}}
+            {{/each}}    
+    </ol>
 </div>
 
 <div>
     <form>
         <div class="form-group">
-            <label for="input">Password</label>
-            <input type="input" class="form-control" id="input" placeholder="Password">
+            <label for="input"></label>
+            <input type="input" class="form-control" id="input" placeholder="">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <p>Enter a burger you want to eat and click the "Submit" button</p>

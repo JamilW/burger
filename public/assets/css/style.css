@@ -1,0 +1,38 @@
+body    {
+    background-color: orange;
+}
+
+img {
+    margin-left: 40vw;
+}
+
+h1  {
+    text-align: center;
+    color: rgb(221, 17, 17);
+}
+
+.consumed {
+    float: left;
+}
+
+.devoured {
+    float: right;
+}
+
+input {
+    margin-left: 38vw;
+    padding: 3vh;
+    width: 20vw;
+}
+
+button  {
+    background-color: blue;
+    color: white;
+    margin-left: 47vw;
+    padding: 10px;
+    margin-top: 3vh;
+}
+
+p   {
+    text-align: center;
+}

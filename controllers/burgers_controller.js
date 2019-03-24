@@ -1,9 +1,9 @@
 const express = require("express");
-const router = express.router();
+const router = express.Router();
 const burger = require("../models/burger.js");
 
 router.get("/", function(req, res)  {
-    burger.selectAll(function(data) {
+    burger.all(function(data) {
         const hbsObject = {
             burger: data
         };
@@ -13,7 +13,7 @@ router.get("/", function(req, res)  {
 });
 
 router.post("/api/burgers", function(req, res)  {
-    burger.insertOne([
+    burger.create([
         "burger_name", "devoured"
     ],  [
         req.body.burger_name, req.body.devoured
