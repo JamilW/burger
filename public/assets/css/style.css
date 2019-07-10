@@ -2,8 +2,12 @@ body    {
     background-color: orange;
 }
 
-img {
-    margin-left: 40vw;
+h1  {
+    text-align: center;
+}
+
+.icon   {
+    margin-left: 350px;
 }
 
 h1  {
@@ -11,26 +15,59 @@ h1  {
     color: rgb(221, 17, 17);
 }
 
-.consumed {
-    float: left;
+.spacing-reset {
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
-.devoured {
-    float: right;
+.list-reset {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    border: 0;
 }
 
-input {
-    margin-left: 38vw;
-    padding: 3vh;
-    width: 20vw;
+@media (min-width: 1200px) {
+.container {
+    width: 990px;
+}
 }
 
-button  {
-    background-color: blue;
+@media (min-width: 992px) {
+.container {
+    width: 990px;
+}
+}
+
+.enter_section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.task {
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
+  
+#devourBtn  {
+    margin-top: 0;
+    background-color: #3636be;
     color: white;
-    margin-left: 47vw;
+}
+
+#burgerName {
+    margin-right: 50px;
+}
+
+#text-enter-button  {
+    background-color: #3636be;
+    color: white;
+    margin-left: 0px;
     padding: 10px;
-    margin-top: 3vh;
+    margin-top: 10px;
 }
 
 p   {

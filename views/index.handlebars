@@ -1,37 +1,48 @@
 <div class="container">
-    <img class="icon" src="/assets/image/Burger_PNG_Clip_Art_Image (1).png" style="width: 20vw;">
-    <h1>Eat-Da-Burger!</h1>
-</div>
-
-<div class="consumed">
-    <ul>
-        <h2>Burgers that are not devoured!</h2>
-            {{#each burgers}}
-                {{#unless devoured}}
-                    {{> burgers/burgers-block devoured=true}}
-                {{/unless}}
-            {{/each}}    
-    </ul>
-</div>
-
-<div class="devoured">
-    <ol>
-        <h2>Burgers that are devoured!</h2>
-            {{#each burgers}}
-                {{#if devoured}}
-                    {{> burgers/burgers-block devoured=false}}
-                {{/if}}
-            {{/each}}    
-    </ol>
-</div>
-
-<div>
-    <form>
-        <div class="form-group">
-            <label for="input"></label>
-            <input type="input" class="form-control" id="input" placeholder="">
+	<div class="row">
+		<div class="container">
+            <img class="icon" src="/assets/image/Burger_PNG_Clip_Art_Image (1).png" style="width: 20vw;">
+            <h1>Eat-Da-Burger!</h1>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <p>Enter a burger you want to eat and click the "Submit" button</p>
-    </form>
+		<div class="col-md-6 text-center" class="task">
+			<div class="row">
+			  {{#each burger_data}}
+			  	{{#unless this.devoured}}
+				<div class="col-md-9 text-center">
+					<pre>{{this.id}}. {{this.burger_name}}
+					</pre>
+				  		<!-- {{this.Date}} -->
+				</div>
+				<div class="col-md-3 text-center">
+					<form class="devour-form button-size">
+						<input input type="hidden" class="burger_id" type="text" value={{this.id}}>
+						<button type="submit" id="devourBtn" class="btn btn-default">Devour it!</button>
+					</form>
+				</div>
+				{{/unless}}
+			  {{/each}}
+			</div>
+		</div>
+		<div class="col-md-6 text-center" class="task">
+			  {{#each burger_data}}
+			  	{{#if this.devoured}}
+			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+				{{/if}}
+			  {{/each}}
+		</div>
+	</div>
 </div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center enter_section">
+			<form action="/burgers/create" method="POST">
+				<input type="text" class="form-control" id="burgerName" name="burger_name" value="" id="enter_text">
+				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+			</form>
+			<p>Enter a burger you want to eat Click the "Submit" button.</p>
+		</div>
+	</div>
+</div>
+
+
