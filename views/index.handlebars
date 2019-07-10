@@ -8,14 +8,14 @@
 			<div class="row">
 			  {{#each burger_data}}
 			  	{{#unless this.devoured}}
-				<div class="col-md-9 text-center">
+				<div class="col-md-9 text-center" id="bId">
 					<pre>{{this.id}}. {{this.burger_name}}
 					</pre>
 				  		<!-- {{this.Date}} -->
 				</div>
 				<div class="col-md-3 text-center">
 					<form class="devour-form button-size">
-						<input input type="hidden" class="burger_id" type="text" value={{this.id}}>
+						<input input type="hidden" class="burger_id" id="bId" type="text" value={{this.id}}>
 						<button type="submit" id="devourBtn" class="btn btn-default">Devour it!</button>
 					</form>
 				</div>
